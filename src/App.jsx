@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import SplineShowcase from './components/SplineShowcase';
 import BooksSection from './components/BooksSection';
+import PromoSection from './components/PromoSection';
+import Testimonials from './components/Testimonials';
+import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,7 +18,11 @@ function App() {
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
+        <SplineShowcase />
         <BooksSection />
+        <PromoSection />
+        <Testimonials />
+        <Newsletter />
       </main>
       <Footer />
     </div>
