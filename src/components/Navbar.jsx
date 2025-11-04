@@ -1,67 +1,42 @@
-import { useState } from 'react';
-import { BookOpen, ShoppingCart, Search, Menu, X } from 'lucide-react';
+import { BookOpen, ShoppingCart, Search, User } from "lucide-react";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-6 w-6 text-indigo-600" />
-            <span className="font-semibold tracking-tight">TokoBuku</span>
+            <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              <BookOpen className="h-5 w-5" />
+            </div>
+            <span className="text-lg font-semibold tracking-tight">BlueBooks</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-slate-600">
-            <a href="#baru" className="hover:text-slate-900 transition-colors">Terbaru</a>
-            <a href="#populer" className="hover:text-slate-900 transition-colors">Populer</a>
-            <a href="#kategori" className="hover:text-slate-900 transition-colors">Kategori</a>
-            <a href="#promo" className="hover:text-slate-900 transition-colors">Promo</a>
+
+          <div className="hidden md:flex items-center gap-2 flex-1 max-w-xl mx-6">
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search books, authors, or genres"
+                className="w-full rounded-lg border border-gray-200 bg-white py-2.5 pl-10 pr-3 text-sm outline-none ring-0 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+              />
+            </div>
+          </div>
+
+          <nav className="flex items-center gap-3">
+            <button className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50">
+              <User className="h-4 w-4" />
+              <span className="hidden sm:inline">Sign in</span>
+            </button>
+            <button className="relative inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-500">
+              <ShoppingCart className="h-4 w-4" />
+              <span className="hidden sm:inline">Cart</span>
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1 text-xs font-semibold text-indigo-700 shadow">
+                2
+              </span>
+            </button>
           </nav>
-          <div className="hidden md:flex items-center gap-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Cari buku..."
-                className="pl-9 pr-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
-              />
-            </div>
-            <button className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm hover:bg-slate-50">
-              <ShoppingCart className="h-4 w-4" />
-              Keranjang
-            </button>
-          </div>
-          <button
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-slate-100"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
-        {mobileOpen && (
-          <div className="md:hidden pb-4 space-y-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Cari buku..."
-                className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <a href="#baru" className="rounded-lg px-3 py-2 border border-slate-200 text-center hover:bg-slate-50">Terbaru</a>
-              <a href="#populer" className="rounded-lg px-3 py-2 border border-slate-200 text-center hover:bg-slate-50">Populer</a>
-              <a href="#kategori" className="rounded-lg px-3 py-2 border border-slate-200 text-center hover:bg-slate-50">Kategori</a>
-              <a href="#promo" className="rounded-lg px-3 py-2 border border-slate-200 text-center hover:bg-slate-50">Promo</a>
-            </div>
-            <button className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm hover:bg-slate-50">
-              <ShoppingCart className="h-4 w-4" />
-              Lihat Keranjang
-            </button>
-          </div>
-        )}
       </div>
     </header>
   );

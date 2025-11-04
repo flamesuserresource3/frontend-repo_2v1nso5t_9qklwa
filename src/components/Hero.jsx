@@ -1,61 +1,55 @@
-import { Star, ChevronRight } from 'lucide-react';
+import { Sparkles, Star } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="pt-10 sm:pt-14 lg:pt-20 pb-10">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-600 mb-4">
-            <Star className="h-3.5 w-3.5 text-amber-500" />
-            Bestseller Minggu Ini
-          </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900">
-            Temukan buku terbaik untuk menginspirasi harimu
-          </h1>
-          <p className="mt-4 text-slate-600 text-base">
-            Jelajahi koleksi novel, non-fiksi, pengembangan diri, dan ribuan judul lain dari penulis favoritmu.
-          </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <a
-              href="#populer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 text-white px-5 py-3 text-sm font-medium shadow-sm hover:bg-indigo-700"
-            >
-              Lihat Buku Populer
-              <ChevronRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#kategori"
-              className="inline-flex items-center justify-center rounded-lg border border-slate-200 px-5 py-3 text-sm font-medium hover:bg-slate-50"
-            >
-              Jelajahi Kategori
-            </a>
-          </div>
-          <dl className="mt-8 grid grid-cols-3 gap-6">
-            <div>
-              <dt className="text-sm text-slate-500">Judul</dt>
-              <dd className="text-xl font-semibold">25k+</dd>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(800px_400px_at_20%_0%,rgba(99,102,241,0.15),transparent),radial-gradient(600px_300px_at_80%_20%,rgba(56,189,248,0.15),transparent)]" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/70 bg-white/70 px-3 py-1 text-xs font-medium text-indigo-700">
+              <Sparkles className="h-3.5 w-3.5" />
+              New this week: 50+ curated reads
             </div>
-            <div>
-              <dt className="text-sm text-slate-500">Penerbit</dt>
-              <dd className="text-xl font-semibold">1.2k</dd>
+            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Discover your next favorite book
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              Explore bestsellers, editor’s picks, and hidden gems across every
+              genre. Fast delivery, fair prices, and a library you’ll love.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href="#books"
+                className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-white shadow-sm hover:bg-indigo-500"
+              >
+                Browse Books
+              </a>
+              <a
+                href="#showcase"
+                className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-900 hover:bg-gray-50"
+              >
+                Live Showcase
+              </a>
             </div>
-            <div>
-              <dt className="text-sm text-slate-500">Ulasan</dt>
-              <dd className="text-xl font-semibold">120k+</dd>
-            </div>
-          </dl>
-        </div>
-        <div className="relative">
-          <div className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-indigo-100 via-white to-rose-100 p-1">
-            <div className="h-full w-full rounded-xl bg-white shadow-sm grid grid-cols-3 gap-3 p-3">
-              {[1,2,3,4,5,6].map((i) => (
-                <div key={i} className="rounded-lg bg-slate-100/70 border border-slate-200/70" />
-              ))}
+            <div className="mt-6 flex items-center gap-4 text-sm text-gray-500">
+              <div className="flex items-center gap-1 text-indigo-600">
+                <Star className="h-4 w-4 fill-indigo-600 text-indigo-600" />
+                <Star className="h-4 w-4 fill-indigo-600 text-indigo-600" />
+                <Star className="h-4 w-4 fill-indigo-600 text-indigo-600" />
+                <Star className="h-4 w-4 fill-indigo-600 text-indigo-600" />
+                <Star className="h-4 w-4 fill-indigo-600 text-indigo-600" />
+              </div>
+              <span>Trusted by 20k+ readers</span>
             </div>
           </div>
-          <div className="absolute -bottom-4 -right-2 bg-white shadow-lg rounded-xl px-4 py-3 border border-slate-200">
-            <div className="text-xs text-slate-500">Penawaran hari ini</div>
-            <div className="font-semibold">Diskon hingga 40%</div>
+          <div className="relative">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6">
+              <div className="col-span-2 aspect-[4/3] rounded-2xl bg-gradient-to-br from-indigo-100 to-indigo-200" />
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200" />
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-amber-100 to-amber-200" />
+              <div className="col-span-2 aspect-[4/3] rounded-2xl bg-gradient-to-br from-rose-100 to-rose-200" />
+            </div>
           </div>
         </div>
       </div>
